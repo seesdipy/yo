@@ -99,19 +99,6 @@ blowButton.addEventListener("click", () => {
   surprise.hidden = false;
 });
 
-galleryInput.addEventListener("change", (event) => {
-  galleryGrid.innerHTML = "";
-  Array.from(event.target.files).forEach((file) => {
-    const reader = new FileReader();
-    reader.onload = (loadEvent) => {
-      const img = document.createElement("img");
-      img.src = loadEvent.target.result;
-      img.alt = "Shared memory";
-      galleryGrid.appendChild(img);
-    };
-    reader.readAsDataURL(file);
-  });
-});
 
 const triggerFireworks = () => {
   fireworksCanvas.style.opacity = "1";
