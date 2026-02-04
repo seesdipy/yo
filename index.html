@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Quicksand:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+    <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+
+    <header class="hero">
+      <div class="hero-content">
+        <p class="badge">Birthday Bash 2024</p>
+        <h1>Happy Birthday, <span contenteditable="true" aria-label="Name">Bestie</span>!</h1>
+        <p class="subtitle">
+          A joyful space filled with love, sparkle, and memories just for you.
+        </p>
+        <div class="countdown">
+          <div>
+            <label for="birthday-time">Birth Hour Countdown</label>
+            <input id="birthday-time" type="datetime-local" />
+          </div>
+          <div class="countdown-display" aria-live="polite">
+            <span id="countdown-value">00d 00h 00m 00s</span>
+          </div>
+        </div>
+      </div>
+      <div class="music-player">
+        <h2>Now Playing</h2>
+        <p>"Love Again" - Dua Lipa</p>
+        <audio id="birthday-audio" controls autoplay>
+          <source src="love-again.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <p class="audio-note">
+          Drop a track named <strong>love-again.mp3</strong> in this folder to enable
+          playback.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="message">
+        <h2>Personalized Message</h2>
+        <div class="message-card">
+          <p class="decorative">To my shining star,</p>
+          <p contenteditable="true" aria-label="Personal message">
+            May your day be overflowing with laughter, sweet surprises, and every wish
+            you have been dreaming of.
+          </p>
+          <p class="decorative">With all my love 💖</p>
+        </div>
+      </section>
+
+      <section class="candle-section">
+        <div class="candle-card">
+          <h2>Make a Wish</h2>
+          <div class="candle" aria-live="polite">
+            <div class="flame" id="flame"></div>
+            <div class="wax"></div>
+          </div>
+          <button id="blow-button" class="primary">Blow out the candle</button>
+          <p id="surprise" class="surprise" hidden>
+            🎉 Surprise! You are the sparkle that lights up every room.
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2>Shared Memories Gallery</h2>
+        <p>Upload photos to celebrate your favorite moments together.</p>
+        <input id="gallery-input" type="file" accept="image/*" multiple />
+        <div id="gallery-grid" class="gallery-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="guestbook">
+        <h2>Guestbook of Love</h2>
+        <p>Leave a sweet message and add a digital sticker!</p>
+        <form id="guestbook-form">
+          <input id="guest-name" type="text" placeholder="Your name" required />
+          <input id="guest-message" type="text" placeholder="Your wishes" required />
+          <select id="guest-sticker" aria-label="Sticker">
+            <option value="🎈">🎈 Balloon</option>
+            <option value="🎂">🎂 Cake</option>
+            <option value="🌟">🌟 Star</option>
+            <option value="🫶">🫶 Love</option>
+            <option value="🎁">🎁 Gift</option>
+          </select>
+          <button type="submit" class="primary">Sign Guestbook</button>
+        </form>
+        <ul id="guestbook-entries" class="guestbook-entries"></ul>
+      </section>
+
+      <section class="gift">
+        <h2>Virtual Gift Unwrapping</h2>
+        <div id="gift-box" class="gift-box" role="button" aria-label="Unwrap gift">
+          <div class="gift-lid"></div>
+          <div class="gift-body"></div>
+          <div class="gift-ribbon"></div>
+        </div>
+        <p id="gift-message" class="gift-message" hidden>
+          🎁 You unlocked a hug, a happy dance, and all the cake you can eat!
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with love and confetti.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
