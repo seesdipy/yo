@@ -74,7 +74,7 @@ const launchConfetti = () => {
 const updateCountdown = () => {
   const target = new Date(birthdayTimeInput.value);
   if (Number.isNaN(target.getTime())) {
-    countdownValue.textContent = "Pick a birthday time to start the countdown.";
+    countdownValue.textContent = "2026-04-02T00:00:00";
     return;
   }
   const now = new Date();
